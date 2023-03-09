@@ -11,9 +11,7 @@ app.get("/clients", (req, res) => {
 app.get("/clients/:id", (req, res) => {
    const { id } = req.params;
    const client = data.find(cli => cli.id == id);
-   if (!client) {
-      return res.status(204).json();
-   }
+   if (!client) return res.status(204).json();
    res.json(client);
 });
 
